@@ -1,0 +1,125 @@
+CREATE TABLE User(
+	userID INTEGER PRIMARY KEY,
+	planID INTEGER REFERENCES Plan,
+	countryID CHAR(30) REFERENCES Country, //mudar nome em UML e MR
+	name CHAR (30) NOT NULL,
+	cc CHAR (16) NOT NULL,
+	email CHAR(50) NOT NULL UNIQUE,
+	password CHAR(50) NOT NULL);
+
+CREATE TABLE Plan(
+	planID INTEGER PRIMARY KEY,
+	price REAL NOT NULL,
+	maxdevicequantity INTEGER NOT NULL,
+	maxmobilequantity INTEGER NOT NULL,
+	imgquality INTEGER NOT NULL);
+
+CREATE TABLE Profile(
+	profileID INTEGER PRIMARY KEY,
+	userID INTEGER REFERENCES User,
+	country CHAR(30) REFERENCES Country,
+	imagelink CHAR(255) REFERENCES Image,
+	favgenre CHAR(30) REFERENCES Genre,
+	name CHAR (30) NOT NULL,
+	birthdate DATE,
+	language CHAR); 
+
+CREATE TABLE Country( 
+	countryID INTEGER PRIMARY KEY, // ADICIONAR id no MR e UML e mudar nomes
+	countryname CHAR(30) NOT NULL UNIQUE); 
+
+CREATE TABLE Genre(
+	genreID INTEGER PRIMARY KEY,
+	genrename CHAR(30) NOT NULL UNIQUE); // ADICIONAR id no MR e UML
+
+CREATE TABLE GenreContent(
+	contentID REFERENCES Content,
+	genreID REFERENCES Genre,
+	PRIMARY KEY (contentID,genreID));
+
+CREATE TABLE Image(
+	imagelink CHAR(255) PRIMARY KEY,  //MUDAR NO MR E UML ligar image e show
+	imagename CHAR(20) UNIQUE);
+
+CREATE TABLE Content(
+	contentID INTEGER PRIMARY KEY, 
+	imagelink CHAR(255) REFERENCES Image,
+	description CHAR(255),
+	imgquality INTEGER NOT NULL,
+	videolink CHAR(255) NOT NULL UNIQUE,
+	duration TIME);
+
+CREATE TABLE CastMember(
+	cmemberID INTEGER PRIMARY KEY, //modiifcar no UML e MR
+	name CHAR(30) NOT NULL);
+
+CREATE TABLE Role(
+	roleID INTEGER PRIMARY KEY, // ADICIONAR id no MR e UML
+	rolename CHAR(30) NOT NULL);
+
+CREATE TABLE RolePlayedIn( // ADICIONAR TABELA ROLEPLAYED E MUDAR TABELA ROLE
+	contentID INTEGER REFERENCES Content,
+	cmemberID INTEGER REFERENCES CastMember,
+	roleID INTEGER REFERENCES Role,
+	PRIMARY KEY (contentID,cmemberID,roleID));
+
+CREATE TABLE Show( //modiifcar no UML e MR 
+	showID INTEGER PRIMARY KEY,
+	name CHAR(30) NOT NULL,
+	year CHAR(4) REFERENCES Year,
+	agegroupname CHAR(30) REFERENCES AgeGroup,
+	description CHAR(255),
+	duration TIME);
+
+CREATE TABLE Movie(  //modiifcar no UML e MR 
+	movieID INTEGER REFERENCES Content,
+	year CHAR(4) REFERENCES Year,
+	agegroupname CHAR(30) REFERENCES AgeGroup,
+	PRIMARY KEY (movieID));
+
+CREATE TABLE Trailer(
+	trailerID INTEGER PRIMARY KEY,
+	contentID INTEGER REFERENCES Content,
+	seasonID INTEGER REFERENCES Season,
+	thumbnaillink CHAR(255) NOT NULL UNIQUE,
+	duration TIME,
+	videolink CHAR(255));
+
+CREATE TABLE Season( //id vs chave composta?
+	number INTEGER,
+	showID INTEGER REFERENCES Show,
+	PRIMARY KEY(number,showID));
+
+CREATE TABLE Episode(
+	number INTEGER,
+	seasonID INTEGER REFERENCES Season,
+	episodeID INTEGER REFERENCES Content,
+	PRIMARY KEY (episodeID));
+
+CREATE TABLE ContentView(
+	profileID INTEGER REFERENCES Profile,
+	contentID INTEGER REFERENCES Content,
+	date DATE,
+	hour TIME,
+	viewtime TIME,
+	rating INTEGER,
+	PRIMARY KEY (profileID,contentID));
+
+CREATE TABLE Year(
+	year CHAR(4) PRIMARY KEY);
+
+CREATE TABLE AgeGroup(
+	agegroupname CHAR(30) PRIMARY KEY,
+	minimumage INTEGER UNIQUE);
+
+// como selecionar chave composta?
+
+
+INSERT INTO 
+VALUES ();
+
+SELECT FROM WHERE 
+
+INSERT INTO Episode(epnumber,seasonID)
+VALUES (1,
+		(SELECT seasonID FROM Season WHERE seasonnumber = 1 ));

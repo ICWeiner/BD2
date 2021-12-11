@@ -1,0 +1,97 @@
+PRAGMA foreign_keys = ON;
+
+INSERT INTO Plan(price, maxdevicequantity, maxmobilequantity, imgquality)
+VALUES (7.99,1,1,1);
+
+INSERT INTO Country(countryname)
+VALUES ("Portugal"),("Germany"),("France");
+
+INSERT INTO Year
+VALUES ("2005"),("2001");
+
+INSERT INTO AgeGroup(agegroupname,minimumage)
+VALUES ("Mature",17),("Everyone",3);
+
+INSERT INTO User(planID,countryID, name, cc, email, password) 
+VALUES (
+	(SELECT planID FROM Plan WHERE price = 7.99),
+	(SELECT countryID FROM Country WHERE countryname = "Portugal"),
+	"Rodrigo Monteiro",
+	1234567891234567,
+	"rodrigo@gmail.com",
+	"QWERTYqwerty");
+
+INSERT INTO Genre(genrename)
+VALUES	("Action"),("Comedy"),("Romance"),
+		("Horror"),("Sitcom"),("Mockumentary")
+		,("Animation"),("Adventure");
+
+INSERT INTO Role(rolename)
+VALUES ("Producer"),("Director"),("Actor"),("Voice Actor"),("Writer");
+
+INSERT INTO Image(imagename,imagelink)
+VALUES 	("The_Office_normal_cover","shorturl.at/qczBN2"),
+		("The_Office_Profile_Image_Michael","shorturl.at/sAMO5"),
+		("Shrek_normal_cover","shorturl.at/mJL69");
+
+INSERT INTO Profile(userID,countryID,imagelink,genreID,name,birthdate,language)
+VALUES ((SELECT userID FROM User WHERE email = "rodrigo@gmail.com"),
+		(SELECT countryID FROM User WHERE email = "rodrigo@gmail.com"),
+		(SELECT imagelink FROM Image WHERE imagename = "The_Office_Profile_Image_Michael"),
+		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
+		 "Abel Asdrubal",
+		 15-02-1978,
+		 "Ingles");
+
+INSERT INTO Show(showname, year,agegroupname, description,imagelink)
+VALUES ("The Office",
+		(SELECT year FROM Year WHERE year = 2005),
+		(SELECT agegroupID FROM AgeGroup WHERE minimumage = 17),
+		"A mockumentary on a group of typical office workers,
+		 where the workday consists of ego clashes,
+		  inappropriate behavior, and tedium.",
+		(SELECT imagelink FROM Image WHERE imagename = "The_Office_normal_cover"));
+
+INSERT INTO CastMember(castname) 
+VALUES ("John Krasinski"),("Jenna Fischer"),("Steve Carrel"),
+		("Rainn Wilson"),("Creed Bratton"),("Andrew Adamson"),
+		("William Steig"),("Mike Myers"),("Eddie Murphy");
+
+INSERT INTO Season(seasonnumber,showID)
+VALUES (1,(SELECT showID FROM Show WHERE showname = "The Office" AND year = "2005"));
+
+INSERT INTO Content(imagelink, contentname, description, imgquality, videolink, duration)
+VALUES  ((SELECT imagelink FROM Image WHERE imagename = "The_Office_normal_cover"),
+		"Pilot",
+		"First Episode",
+		 3,
+		 "www.fakelink.com",
+		 "22:28"),
+		((SELECT imagelink FROM Image WHERE imagename = "Shrek_normal_cover"),
+		"Shrek",
+		"A mean lord exiles fairytale creatures to the swamp of a grumpy ogre,
+		 who must go on a quest and rescue a princess for the lord in order to
+		 get his land back.",
+		 3,
+		 "www.fakelink2.com",
+		 "1:30:00");
+		
+INSERT INTO Movie
+VALUES ((SELECT contentID FROM Content WHERE contentname = "Shrek"),
+		(SELECT year FROM Year WHERE year = "2001"),
+		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 3));
+
+INSERT INTO GenreShow
+VALUES 	((SELECT showID FROM Show WHERE showname = "The Office"),
+		(SELECT genreID FROM Genre WHERE genrename = "Sitcom")),
+		((SELECT showID FROM Show WHERE showname = "The Office"),
+		(SELECT genreID FROM Genre WHERE genrename = "Mockumentary"));
+
+INSERT INTO GenreMovie
+VALUES	((SELECT contentID FROM Content WHERE contentname = "Shrek"),
+		(SELECT genreID FROM Genre WHERE genrename = "Adventure")),
+		((SELECT contentID FROM content WHERE contentname = "Shrek"),
+		(SELECT genreID FROM Genre WHERE genrename = "Animation"));
+
+INSERT INTO RolePlayedIn(con)//ACABAR ROLEPLAYEDIN TRAILER CONTENT VIEW
+

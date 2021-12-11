@@ -1,0 +1,44 @@
+CREATE TABLE Team (
+	name CHAR(30) PRIMARY KEY,
+	country CHAR(30));
+
+CREATE TABLE Aircraft (
+	model CHAR(30) PRIMARY KEY,
+	horsepower REAL,
+	topspeed REAL,
+	width REAL,
+	height REAL,
+	weight REAL);
+
+CREATE TABLE Pilot (
+	num INTEGER PRIMARY KEY,
+	firstname CHAR(30),
+	surname CHAR(30),
+	nationality CHAR(30),
+	birthday DATE,
+	team CHAR(30) REFERENCES Team,
+	aircraft CHAR(30)REFERENCES Aircraft);
+
+CREATE TABLE Race (
+	location CHAR(30),
+	edition CHAR(30),
+	country CHAR(30),
+	date DATE UNIQUE,
+	gates INTEGER,
+	eliminations INTEGER,
+	PRIMARY KEY(location,edition));
+
+CREATE TABLE Participation (
+	pilot INTEGER REFERENCES Pilot,
+	location CHAR(30),
+	edition CHAR(30),
+	trainingtime INTEGER,
+	trainingpos INTEGER,
+	trainingpenalty TIME,
+	qualificationtime TIME,
+	qualificationpos INTEGER,
+	qualificationpenalty INTEGER,
+	eliminationtime TIME,
+	eliminationpos INTEGER,
+	eliminationpenalty TIME,
+	PRIMARY KEY(pilot,FOREIGN KEY(location,edition) REFERENCES))

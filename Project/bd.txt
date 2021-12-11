@@ -1,0 +1,122 @@
+CREATE TABLE User(
+	userID INTEGER PRIMARY KEY,
+	planID INTEGER REFERENCES Plan,
+	countryID CHAR(30) REFERENCES Country, 
+	name CHAR (30) NOT NULL,
+	cc CHAR (16) NOT NULL,
+	email CHAR(50) NOT NULL UNIQUE,
+	password CHAR(50) NOT NULL);
+
+CREATE TABLE Plan(
+	planID INTEGER PRIMARY KEY,
+	price REAL NOT NULL,
+	maxdevicequantity INTEGER NOT NULL,
+	maxmobilequantity INTEGER NOT NULL,
+	imgquality INTEGER NOT NULL);
+
+CREATE TABLE Profile(
+	profileID INTEGER PRIMARY KEY,
+	userID INTEGER REFERENCES User,
+	countryID CHAR(30) REFERENCES Country,
+	imagelink CHAR(255) REFERENCES Image,
+	genreID INTEGER REFERENCES Genre,
+	name CHAR (30) NOT NULL,
+	birthdate DATE,
+	language CHAR(30)); 
+
+CREATE TABLE Country( 
+	countryID INTEGER PRIMARY KEY,
+	countryname CHAR(30) UNIQUE NOT NULL); 
+
+CREATE TABLE Genre(
+	genreID INTEGER PRIMARY KEY,
+	genrename CHAR(30) UNIQUE NOT NULL); 
+
+CREATE TABLE GenreShow(
+	showID REFERENCES Show,
+	genreID REFERENCES Genre,
+	PRIMARY KEY (showID,genreID));
+
+CREATE TABLE GenreMovie(
+	movieID REFERENCES Movie,
+	genreID REFERENCES Genre,
+	PRIMARY KEY (movieID,genreID));
+
+CREATE TABLE Image(
+	imagelink CHAR(255) PRIMARY KEY, 
+	imagename CHAR(20) UNIQUE);
+
+CREATE TABLE Content(
+	contentID INTEGER PRIMARY KEY,
+	contentname CHAR(30),
+	imagelink CHAR(255) REFERENCES Image,
+	description CHAR(255),
+	imgquality INTEGER NOT NULL,
+	videolink CHAR(255) NOT NULL UNIQUE,
+	duration CHAR(8));
+
+CREATE TABLE CastMember(
+	castmemberID INTEGER PRIMARY KEY, 
+	castname CHAR(30) NOT NULL);
+
+CREATE TABLE Role(
+	roleID INTEGER PRIMARY KEY, 
+	rolename CHAR(30) NOT NULL);
+
+CREATE TABLE RolePlayedIn( 
+	contentID INTEGER REFERENCES Content,
+	cmemberID INTEGER REFERENCES CastMember,
+	roleID INTEGER REFERENCES Role,
+	PRIMARY KEY (contentID,cmemberID,roleID));
+
+CREATE TABLE Show( 
+	showID INTEGER PRIMARY KEY,
+	showname CHAR(30) NOT NULL,
+	year CHAR(4) REFERENCES Year,
+	agegroupname CHAR(30) REFERENCES AgeGroup,
+	description CHAR(255),
+	imagelink CHAR(255) REFERENCES Image,
+	UNIQUE (showname,year));
+
+CREATE TABLE Movie(  
+	movieID INTEGER REFERENCES Content,
+	year CHAR(4) REFERENCES Year,
+	agegroupname CHAR(30) REFERENCES AgeGroup,
+	PRIMARY KEY (movieID));
+
+CREATE TABLE Trailer(
+	trailerID INTEGER PRIMARY KEY,
+	seasonID INTEGER REFERENCES Season,
+	movieID INTEGER REFERENCES Movie,
+	thumbnaillink CHAR(255) NOT NULL UNIQUE,
+	duration CHAR(8),
+	videolink CHAR(255),
+	CHECK(seasonID IS NULL AND movieID IS NOT NULL OR 
+		  seasonID IS NOT NULL AND movieID IS NULL));
+
+CREATE TABLE Season(
+	seasonID INTEGER PRIMARY KEY,
+	seasonnumber INTEGER,
+	showID INTEGER REFERENCES Show);
+
+CREATE TABLE Episode(
+	episodeID INTEGER PRIMARY KEY,
+	epnumber INTEGER,
+	seasonID INTEGER REFERENCES Season);
+
+CREATE TABLE ContentView(
+	profileID INTEGER REFERENCES Profile,
+	contentID INTEGER REFERENCES Content,
+	date DATE,
+	hour CHAR(8),
+	viewtime CHAR(8),
+	rating INTEGER,
+	PRIMARY KEY (profileID,contentID));
+
+CREATE TABLE Year(
+	year CHAR(4) PRIMARY KEY);
+
+CREATE TABLE AgeGroup(
+	agegroupID INTEGER PRIMARY KEY,
+	agegroupname CHAR(30) UNIQUE NOT NULL,
+	minimumage INTEGER NOT NULL);

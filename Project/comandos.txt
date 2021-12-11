@@ -1,0 +1,9 @@
+.mode columns
+.headers on
+.read bd.txt
+.read povoar.txt
+
+SELECT * FROM GenreShow;
+SELECT * FROM GenreMovie;
+Select * From Movie;
+
