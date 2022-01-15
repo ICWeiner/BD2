@@ -3,7 +3,9 @@
 .read bd.txt
 .read povoar.txt
 
+SELECT * FROM Profile
 SELECT * FROM GenreShow;
 SELECT * FROM GenreMovie;
-Select * From Movie;
-
+SELECT * From Movie;
+SELECT * FROM Content;
+SELECT * FROM ContentView;
