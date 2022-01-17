@@ -1,4 +1,4 @@
-Create Trigger CreateDefaultProfile
+Create Trigger R1
 After Insert On User
 For Each Row
 Begin
