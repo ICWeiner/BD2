@@ -1,8 +1,8 @@
-Create Trigger R1
-After Insert On User
+Create Trigger RestrictMaxViewTime
+After Insert On ContentView
 For Each Row
+When New.viewingtime > (SELECT duration From Content WHERE contentID = New.contentID)
 Begin
-	Insert into Profile(userID,countryID,imgID,favgenre,profilename,birthdate) VALUES
-	(New.userID, New.countryID,
-	(SELECT imgID FROM Image WHERE imgname = "Default_Profile_Image"),null,New.username,null);
+	UPDATE ContentView SET viewingtime = (SELECT duration From Content WHERE contentID =  New.contentID)
+	WHERE contentID = New.contentID AND profileID = New.profileID;
 End;
