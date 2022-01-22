@@ -77,7 +77,7 @@ CREATE TABLE Content(
 	description CHAR(255),
 	imgquality INTEGER NOT NULL,
 	videolink CHAR(255) NOT NULL UNIQUE,
-	duration CHAR(8));
+	duration TIME);
 
 CREATE TABLE CastMember(
 	cmemberID INTEGER PRIMARY KEY, 
@@ -140,8 +140,8 @@ CREATE TABLE ContentView(
 	profileID INTEGER REFERENCES Profile,
 	contentID INTEGER REFERENCES Content,
 	viewdate DATE,
-	hour CHAR(8),
-	viewingtime CHAR(8),
+	hour TIME,
+	viewingtime TIME,
 	rating INTEGER,
 	PRIMARY KEY (profileID,contentID),
 	CHECK(rating > -1 AND rating < 6));
