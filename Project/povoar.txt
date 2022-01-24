@@ -18,7 +18,7 @@ VALUES
 	"rodrigo@gmail.com",
 	"QWERTYqwerty"),
 
-	((SELECT planID FROM Plan WHERE price = 7.99),
+	((SELECT planID FROM Plan WHERE price = 11.99),
 	(SELECT countryID FROM Country WHERE countryname = "Portugal"),
 	"Diogo Nunes",
 	4567891236453231,
@@ -646,7 +646,7 @@ VALUES 	((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				'30-12-2021',"13:10","30:18",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
-				(SELECT contentID FROM Content WHERE contentname = "Mr Robot- zer0-day"),
+				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - zer0-day"),
 				'31-12-2021',"14:10","35:18",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
