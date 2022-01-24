@@ -329,7 +329,7 @@ VALUES  ((SELECT imgiD FROM Image WHERE imgname = "The_Office_normal_cover"),
 		 get his land back.",
 		 1,
 		 "www.fakelink5.com",
-		 "1:30:00"),
+		 "01:30:00"),
 
 		((SELECT imgID FROM Image WHERE imgname = "The_Nutty_Professor_normal_cover"),
 		"The Nutty Professor",
@@ -337,7 +337,7 @@ VALUES  ((SELECT imgiD FROM Image WHERE imgname = "The_Office_normal_cover"),
 		special chemical that turns him into the slim but obnoxious Buddy Love.",
 		 1,
 		 "www.fakelink6.com",
-		 "1:28:00"),
+		 "01:28:00"),
 
 		((SELECT imgID FROM Image WHERE imgname = "Matrix_Normal_Cover"),
 		"Matrix",
@@ -346,7 +346,7 @@ VALUES  ((SELECT imgiD FROM Image WHERE imgname = "The_Office_normal_cover"),
 		an evil cyber-intelligence.",
 		 1,
 		 "www.fakelink7.com",
-		 "2:16:00"),
+		 "02:16:00"),
 
 		((SELECT imgID FROM Image WHERE imgname = "John_Wick_Normal_Cover"),
 		"John Wick",
@@ -354,7 +354,7 @@ VALUES  ((SELECT imgiD FROM Image WHERE imgname = "The_Office_normal_cover"),
 		killed his dog and took everything from him.",
 		 2,
 		 "www.fakelink8.com",
-		 "1:41:00"),
+		 "01:41:00"),
 
 		((SELECT imgID FROM Image WHERE imgname = "Knock_Knock_Normal_Cover"),
 		"Knock Knock",
@@ -363,7 +363,7 @@ VALUES  ((SELECT imgiD FROM Image WHERE imgname = "The_Office_normal_cover"),
 		mouse.",
 		 2,
 		 "www.fakelink9.com",
-		 "1:39:00"),
+		 "01:39:00"),
 
 		((SELECT imgID FROM Image WHERE imgname = "Siberia_Normal_Cover"),
 		"Siberia",
@@ -371,7 +371,7 @@ VALUES  ((SELECT imgiD FROM Image WHERE imgname = "The_Office_normal_cover"),
 		he journeys to Siberia in search of him, but instead begins a love affair.",
 		 2,
 		 "www.fakelink10.com",
-		 "1:44:00");
+		 "01:44:00");
 
 
 INSERT INTO Episode
@@ -632,11 +632,11 @@ VALUES 	((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "John Wick"),
-				'20-01-2022',"23:00","1:41:00",5),
+				'20-01-2022',"23:00","01:41:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Rodrigo Monteiro"),
 				(SELECT contentID FROM Content WHERE contentname = "Shrek"),
-				'12-12-2021',"10:20","1:15:32",0),
+				'12-12-2021',"10:20","01:15:32",0),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Rodrigo Monteiro"),
 				(SELECT contentID FROM Content WHERE contentname = "The Office - First Episode"),
@@ -648,7 +648,7 @@ VALUES 	((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Rodrigo Monteiro"),
 				(SELECT contentID FROM Content WHERE contentname = "John Wick"),
-				'10-01-2022',"17:45","1:41:00",5),
+				'10-01-2022',"17:45","01:41:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - m1rr0r1ng"),
@@ -700,7 +700,7 @@ VALUES 	((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "John Wick"),
-				'15-01-2022',"17:45","1:41:00",4),
+				'15-01-2022',"17:45","01:41:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Knock Knock"),
