@@ -57,21 +57,21 @@ VALUES( (SELECT userID FROM User WHERE email = "rodrigo@gmail.com"),
 		(SELECT imgID FROM Image WHERE imgname = "The_Office_Profile_Image_Michael"),
 		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
 		 "Abel Asdrubal",
-		 '15-02-1978'),
+		 '1978-02-15-'),
 		
 	  ( (SELECT userID FROM User WHERE email = "rodrigo@gmail.com"),
 	  	(SELECT countryID FROM User WHERE email = "rodrigo@gmail.com"),
 		(SELECT imgID FROM Image WHERE imgname = "The_Office_Profile_Image_Michael"),
 		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
 		 "Rodrigo Monteiro",
-		 '25-03-2000'),
+		 '2000-03-25'),
 
 	  ( (SELECT userID FROM User WHERE email = "diogo@gmail.com"),
 	  	(SELECT countryID FROM User WHERE email = "diogo@gmail.com"),
 		(SELECT imgID FROM Image WHERE imgname = "The_Office_Profile_Image_Michael"),
 		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
 		 "Diogo Nunes",
-		 '21-10-1965');
+		 '1965-10-21');
 		
 
 INSERT INTO Show(showname, year,agegroupID, description,coverimg)
