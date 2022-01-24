@@ -11,14 +11,14 @@ VALUES ("Mature",17),("Everyone",3),("M/12", 12);
 
 INSERT INTO User(planID,countryID, username, cc, email, password) 
 VALUES 
-  ( (SELECT planID FROM Plan WHERE price = 7.99),
+  ( (SELECT planID FROM Plan WHERE price = 11.99),
 	(SELECT countryID FROM Country WHERE countryname = "Portugal"),
 	"Rodrigo Monteiro",
 	1234567891234567,
 	"rodrigo@gmail.com",
 	"QWERTYqwerty"),
 
-	((SELECT planID FROM Plan WHERE price = 11.99),
+	((SELECT planID FROM Plan WHERE price = 7.99),
 	(SELECT countryID FROM Country WHERE countryname = "Portugal"),
 	"Diogo Nunes",
 	4567891236453231,
@@ -378,6 +378,9 @@ VALUES ((SELECT contentID FROM Content WHERE contentname = "The Office - First E
 		((SELECT contentID FROM Content WHERE contentname = "The Office - Diversity Day"),
 		2,(SELECT seasonID FROM Season WHERE showname = "The Office" AND seasonnumber = 1)),
 
+		((SELECT contentID FROM Content WHERE contentname = "The Office - Health Care"),
+		3,(SELECT seasonID FROM Season WHERE showname = "The Office" AND seasonnumber = 1)),
+
 		((SELECT contentID FROM Content WHERE contentname = "The Office - The Dundies"),
 		1,(SELECT seasonID FROM Season WHERE showname = "The Office" AND seasonnumber = 2)),
 
@@ -402,11 +405,14 @@ VALUES ((SELECT contentID FROM Content WHERE contentname = "The Office - First E
 		((SELECT contentID FROM Content WHERE contentname = "Mr Robot - vi3w s0urce"),
 		7,(SELECT seasonID FROM Season WHERE showname = "Mr Robot" AND seasonnumber = 1)),
 
-		((SELECT contentID FROM Content WHERE contentname = "Mr Robot - m1rr0r1ng"),
+		((SELECT contentID FROM Content WHERE contentname = "Mr Robot - wh1ter0se"),
 		8,(SELECT seasonID FROM Season WHERE showname = "Mr Robot" AND seasonnumber = 1)),
 
-		((SELECT contentID FROM Content WHERE contentname = "Mr Robot - zer0-day"),
+		((SELECT contentID FROM Content WHERE contentname = "Mr Robot - m1rr0r1ng"),
 		9,(SELECT seasonID FROM Season WHERE showname = "Mr Robot" AND seasonnumber = 1)),
+
+		((SELECT contentID FROM Content WHERE contentname = "Mr Robot - zer0-day"),
+		10,(SELECT seasonID FROM Season WHERE showname = "Mr Robot" AND seasonnumber = 1)),
 
 		((SELECT contentID FROM Content WHERE contentname = "Peaky Blinders - The Noose"),
 		1,(SELECT seasonID FROM Season WHERE showname = "Peaky Blinders" AND seasonnumber = 5)),

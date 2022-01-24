@@ -9,4 +9,4 @@ SELECT count(profileID) FROM Profile
 		LEFT JOIN User USING (userID) WHERE planID = (SELECT planID FROM Plan WHERE price = (SELECT min(price) FROM Plan ));
 
 --SELECT * FROM Profile LEFT JOIN ContentView USING (profileID);
-SELECT profileID FROM ContentView LEFT JOIN Content USING (profileID) WHERE contentname = "Shrek";
+SELECT profileID FROM ContentView LEFT JOIN Content USING (contentID) WHERE contentname = "Shrek";
