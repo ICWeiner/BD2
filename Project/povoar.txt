@@ -445,15 +445,15 @@ VALUES 	((SELECT contentID FROM Content WHERE contentname = "Shrek"),
 
 		((SELECT contentID FROM Content WHERE contentname = "Jonh Wick"),
 		("2014"),
-		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 16)),
+		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 17)),
 
 		((SELECT contentID FROM Content WHERE contentname = "Knock Knock"),
 		("2015"),
-		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 16)),
+		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 17)),
 
 		((SELECT contentID FROM Content WHERE contentname = "Siberia"),
 		("2018"),
-		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 16));
+		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 17));
 
 INSERT INTO GenreShow
 VALUES 	((SELECT showID FROM Show WHERE showname = "The Office"),

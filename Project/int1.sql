@@ -1,5 +1,5 @@
 --Quantos filmes tem qualidade Full HD
--- e foram vistos por portugueses TALVEZ
+
 
 .bail ON
 .mode columns
