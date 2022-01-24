@@ -1,4 +1,9 @@
 --numero de episodios de cada serie
+.bail ON
+.mode columns
+.headers on
+.nullvalue NULL
+PRAGMA foreign_keys = ON;
 
 SELECT Show.showname AS Show,
 	  COUNT(Episode.epnumber) AS Numero_de_Episodios 
