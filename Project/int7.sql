@@ -4,4 +4,6 @@
 .nullvalue NULL
 PRAGMA foreign_keys = ON;
 
-SELECT time(sum(strftime('%s', time(duration)) - strftime('%s', '00:00'))) AS Duracao FROM Content, movie WHERE content.contentID = movie.movieID;
+SELECT time(sum(strftime('%s', duration) - strftime('%s', '00:00:00')),'unixepoch') AS total_time FROM Content, movie;
+
+--SELECT sum( (strftime('%s','22:00') - strftime('%s','00:00'))/60 )  AS Duracao FROM Content, movie WHERE content.contentID = movie.movieID;
