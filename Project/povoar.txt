@@ -51,27 +51,30 @@ VALUES 	("The_Office_normal_cover","shorturl.at/qczBN2"),
 
 
 
-INSERT INTO Profile(userID,countryID,imgID,favgenre,profilename,birthdate)
+INSERT INTO Profile(userID,countryID,imgID,favgenre,profilename,birthdate,language)
 VALUES( (SELECT userID FROM User WHERE email = "rodrigo@gmail.com"),
 		(SELECT countryID FROM User WHERE email = "rodrigo@gmail.com"),
 		(SELECT imgID FROM Image WHERE imgname = "The_Office_Profile_Image_Michael"),
 		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
 		 "Abel Asdrubal",
-		 '1978-02-15-'),
+		 '1978-02-15',
+		 "Português"),
 		
 	  ( (SELECT userID FROM User WHERE email = "rodrigo@gmail.com"),
 	  	(SELECT countryID FROM User WHERE email = "rodrigo@gmail.com"),
 		(SELECT imgID FROM Image WHERE imgname = "The_Office_Profile_Image_Michael"),
 		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
 		 "Rodrigo Monteiro",
-		 '2000-03-25'),
+		 '2000-03-25',
+		 "Português"),
 
 	  ( (SELECT userID FROM User WHERE email = "diogo@gmail.com"),
 	  	(SELECT countryID FROM User WHERE email = "diogo@gmail.com"),
 		(SELECT imgID FROM Image WHERE imgname = "The_Office_Profile_Image_Michael"),
 		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
 		 "Diogo Nunes",
-		 '1965-10-21');
+		 '1965-10-21',
+		 "Português");
 		
 
 INSERT INTO Show(showname, year,agegroupID, description,coverimg)
