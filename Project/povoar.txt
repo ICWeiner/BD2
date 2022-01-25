@@ -620,7 +620,7 @@ VALUES 	((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - 3xpl0its"),
-				'27-02-2022',"22:10","45:00",4),
+				'27-02-2022',"22:10","55:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - br4ve travel"),
