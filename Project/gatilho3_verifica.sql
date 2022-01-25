@@ -4,7 +4,6 @@
 
 PRAGMA foreign_keys = ON;
 
-
 SELECT * FROM  ContentView WHERE profileID = 1;
 
 INSERT INTO ContentView

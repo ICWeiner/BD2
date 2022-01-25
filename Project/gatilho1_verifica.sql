@@ -1,3 +1,9 @@
+.mode columns
+.header on
+.nullvalue NULL
+
+PRAGMA foreign_keys = ON;
+
 SELECT * FROM  Profile;
 
 INSERT INTO User(planID,countryID, username, cc, email, password) 
