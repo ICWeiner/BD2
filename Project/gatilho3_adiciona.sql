@@ -12,16 +12,5 @@ WHEN ( SELECT (strftime('%Y', 'now') - strftime('%Y', (SELECT birthdate FROM Pro
 	   	    - (strftime('%m-%d', 'now') < strftime('%m-%d', (SELECT birthdate FROM Profile WHERE profileID = New.profileID) ) ) ) 
 	< (SELECT minimumage FROM agegroup WHERE agegroupID = (SELECT agegroupID FROM Movie WHERE movieid = New.contentID) )
 BEGIN
-	SELECT RAISE(ABORT, 'Invalid Amount');
+	SELECT RAISE(ABORT, 'User isnt old enough for this content');
 END;
-
-
-
-
---SELECT (strftime('%Y', 'now') - strftime('%Y', (SELECT birthdate FROM Profile WHERE profileID = 1) ) ) - (strftime('%m-%d', 'now') < strftime('%m-%d', (SELECT birthdate FROM Profile WHERE profileID = 1)));
-
-
---(strftime('%Y', 'now') - strftime('%Y', (SELECT birthdate FROM Profile WHERE profileID = New.ProfileID)) - 1 ) < 18
---RAISE (ABORT,"Muito novo para ver este conteudo")
-
---- SELECT strftime('%Y', (SELECT birthdate FROM Profile WHERE profileID = New.ProfileID)) - 1 ) < 18
