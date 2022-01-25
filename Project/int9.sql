@@ -4,11 +4,10 @@
 .nullvalue NULL
 PRAGMA foreign_keys = ON;
 
---Quais os filmes e episódios que não foram terminados
+--Quais os filmes e episódios que não foram terminados, com o respetivo perfil.
 
-SELECT ContentView.profileID AS pi, Content.contentname AS Content_Name, ContentView.viewingtime AS Viewing_Time
-FROM Content, ContentView
-WHERE Content.contentID = ContentView.contentID
-AND ContentView.profileID = (SELECT profileID FROM Profile WHERE profileID = pi)
-AND viewingtime < duration
-ORDER BY Content_Name;
+SELECT profile.profilename AS prof_name, content.contentname AS content_name, contentview.viewingtime AS viewing_time FROM profile, content, contentview 
+WHERE content.contentID = contentview.contentID 
+AND contentview.profileID = profile.profileID 
+AND viewingtime < duration 
+ORDER BY prof_name;
