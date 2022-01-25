@@ -443,7 +443,7 @@ VALUES 	((SELECT contentID FROM Content WHERE contentname = "Shrek"),
 		("1999"),
 		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 12)),
 
-		((SELECT contentID FROM Content WHERE contentname = "Jonh Wick"),
+		((SELECT contentID FROM Content WHERE contentname = "John Wick"),
 		("2014"),
 		(SELECT agegroupid FROM AgeGroup WHERE minimumage = 17)),
 
