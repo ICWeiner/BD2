@@ -659,10 +659,6 @@ VALUES 	((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				'2022-01-09',"17:48","23:00",3),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
-				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - hello friend"),
-				'2022-01-10',"17:18","45:00",4),
-
-				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - ones and zeros"),
 				'2022-01-11',"17:16","46:00",4),
 
