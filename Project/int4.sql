@@ -3,7 +3,7 @@
 .nullvalue NULL
 PRAGMA foreign_keys = ON;
 
---Quantidade de perfis base a uma conta com o plano mais barato.
+--Quantidade de perfis ligados a uma conta com o plano base.
 
 SELECT count(profileID) AS Count_Perfis_Base FROM Profile 
 LEFT JOIN User USING (userID) 
