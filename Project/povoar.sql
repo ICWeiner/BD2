@@ -65,7 +65,7 @@ VALUES( (SELECT userID FROM User WHERE email = "rodrigo@gmail.com"),
 		(SELECT imgID FROM Image WHERE imgname = "The_Office_Profile_Image_Michael"),
 		(SELECT genreID FROM Genre WHERE genrename = "Comedy"),
 		 "Rodrigo Monteiro",
-		 '2000-03-25',
+		 '2007-03-25',
 		 "Português"),
 
 	  ( (SELECT userID FROM User WHERE email = "diogo@gmail.com"),
@@ -600,112 +600,112 @@ VALUES	((SELECT seasonID FROM Season WHERE showname = "The Office" AND seasonnum
 INSERT INTO ContentView
 VALUES 	((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "The Office - First Episode"),
-				'12-12-2021',"12:10","22:28",5),
+				'2022-01-03',"12:10","22:28",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "The Office - Diversity Day"),
-				'12-12-2021',"12:40","21:47",5),
+				'2022-01-04',"12:40","21:47",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "The Office - Health Care"),
-				'12-12-2021',"13:58","22:30",4),
+				'2022-01-05',"13:58","22:30",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "Siberia"),
-				'15-01-2022',"12:48","50:30",4),
+				'2022-01-06',"12:48","50:30",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "The Office - The Dundies"),
-				'12-12-2021',"13:30","20:47",5),
+				'2022-01-07',"13:30","20:47",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - 3xpl0its"),
-				'27-02-2022',"22:10","41:00",4),
+				'2022-01-08',"22:10","41:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - br4ve travel"),
-				'29-02-2022',"19:00","40:00",4),
+				'2022-01-09',"19:00","40:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - vi3w s0urce"),
-				'28-02-2022',"22:00","43:00",4),
+				'2022-01-10',"22:00","43:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Diogo Nunes"),
 				(SELECT contentID FROM Content WHERE contentname = "John Wick"),
-				'20-01-2022',"23:00","01:41:00",5),
+				'2022-01-11',"23:00","01:41:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Rodrigo Monteiro"),
 				(SELECT contentID FROM Content WHERE contentname = "Shrek"),
-				'12-12-2021',"10:20","01:15:32",0),
+				'2022-01-14',"10:20","01:15:32",0),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Rodrigo Monteiro"),
 				(SELECT contentID FROM Content WHERE contentname = "The Office - First Episode"),
-				'10-12-2021',"09:50","10:15",0),
+				'2022-01-15',"09:50","10:15",0),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Rodrigo Monteiro"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - wh1ter0se"),
-				'10-12-2021',"20:50","10:15",5),
+				'2022-01-16',"20:50","10:15",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Rodrigo Monteiro"),
 				(SELECT contentID FROM Content WHERE contentname = "John Wick"),
-				'10-01-2022',"17:45","01:41:00",5),
+				'2022-01-17',"17:45","01:41:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - m1rr0r1ng"),
-				'30-12-2021',"13:10","30:18",4),
+				'2022-01-07',"13:10","30:18",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - zer0-day"),
-				'31-12-2021',"14:10","35:18",4),
+				'2022-01-08',"14:10","35:18",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Matrix"),
-				'15-01-2022',"17:48","23:00",3),
+				'2022-01-09',"17:48","23:00",3),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - hello friend"),
-				'24-02-2022',"17:18","45:00",4),
+				'2022-01-10',"17:18","45:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - ones and zeros"),
-				'25-02-2022',"17:16","46:00",4),
+				'2022-01-11',"17:16","46:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - debug"),
-				'26-02-2022',"17:20","50:00",4),
+				'2022-01-12',"17:20","50:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - 3xpl0its"),
-				'26-02-2022',"22:25","49:00",4),
+				'2022-01-14',"22:25","49:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Mr Robot - da3m0ns"),
-				'27-02-2022',"22:25","45:00",4),
+				'2022-01-15',"22:25","45:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Peaky Blinders - The Noose"),
-				'16-01-2022',"17:48","32:00",5),
+				'2022-01-16',"17:48","32:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Peaky Blinders - Heathens"),
-				'17-01-2022',"17:49","49:00",5),
+				'2022-01-17-',"17:49","49:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Peaky Blinders - Blackbird"),
-				'18-01-2022',"17:50","35:00",5),
+				'2022-01-18-',"17:50","35:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Peaky Blinders - Dangerous"),
-				'19-01-2022',"17:51","23:00",5),
+				'2022-01-19',"17:51","23:00",5),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "John Wick"),
-				'15-01-2022',"17:45","01:41:00",4),
+				'2022-01-15',"17:45","01:41:00",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Knock Knock"),
-				'16-01-2022',"11:17","45:09",4),
+				'2022-01-16',"11:17","45:09",4),
 
 				((SELECT profileID FROM Profile WHERE profilename = "Abel Asdrubal"),
 				(SELECT contentID FROM Content WHERE contentname = "Siberia"),
-				'22-01-2022',"13:27","50:09",4);
+				'2022-01-22',"13:27","50:09",4);
