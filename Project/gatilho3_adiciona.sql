@@ -5,6 +5,7 @@
 PRAGMA foreign_keys = ON;
 
 --Nao deixar inserir vizualização se o perfil associado nao tiver idade diferente
+
 CREATE TRIGGER IF NOT EXISTS  restrictViewByAge
 BEFORE INSERT ON ContentView
 FOR EACH ROW

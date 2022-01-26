@@ -2,6 +2,7 @@
 .mode columns
 .headers on
 .nullvalue NULL
+
 PRAGMA foreign_keys = ON;
 
 --Quais os filmes e episódios que não foram terminados, com o respetivo perfil.

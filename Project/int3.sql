@@ -2,6 +2,7 @@
 .mode columns
 .headers on
 .nullvalue NULL
+
 PRAGMA foreign_keys = ON;
 
 --Em quantos conteúdos participa o Ator Keanu Reeves

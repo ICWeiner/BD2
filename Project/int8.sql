@@ -2,10 +2,10 @@
 .mode columns
 .headers on
 .nullvalue NULL
+
 PRAGMA foreign_keys = ON;
 
 --Top 3 de filmes FEUPFlix em relação ao Rating
-
 
 SELECT contentname AS Movie_Name, avg(rating) AS Avg_Rating 
 FROM Content, ContentView, Movie

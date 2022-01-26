@@ -1,4 +1,13 @@
---  Qual o país com maior número de pessoas que viram Jonh Wick
+.bail ON
+.mode columns
+.headers on
+.nullvalue NULL
 
-SELECT country.countryname AS coutry_name FROM country
-WHERE countryID = ( SELECT countryID FROM profile WHERE profileID = ( SELECT profileID FROM contentview WHERE contentID = 22 AND viewingtime = ( SELECT duration FROM content WHERE contentID = 22)));
+PRAGMA foreign_keys = ON;
+
+--  Quantos Portuguêses viram Jonh Wick.
+
+SELECT count(profileID) AS Número_de_Views FROM ContentView 
+LEFT JOIN Profile USING(profileID) 
+WHERE countryID = (SELECT countryID FROM Country WHERE countryname = "Portugal")  
+AND contentID = (SELECT contentID FROM Content WHERE contentname ="John Wick");

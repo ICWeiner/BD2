@@ -2,6 +2,7 @@
 .mode columns
 .headers on
 .nullvalue NULL
+
 PRAGMA foreign_keys = ON;
 
 -- Nome de perfis da conta do user Rodrigo Monteiro que a sua data de nascimento foi entre 1950 e 2001.

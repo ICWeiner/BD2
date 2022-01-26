@@ -5,6 +5,7 @@
 PRAGMA foreign_keys = ON;
 
 --Quando e criado um User, automaticamente cria um perfil com os mesmos dados da conta
+
 CREATE TRIGGER IF NOT EXISTS CreateDefaultProfile
 AFTER INSERT ON User
 FOR EACH ROW
