@@ -6,7 +6,6 @@
 PRAGMA foreign_keys = ON;
 
 --Em quantos conteúdos participa o Ator Keanu Reeves
---Número de participações.
 
 SELECT count(rolename) AS Count_Participação_KR FROM Role 
 JOIN RolePlayedInMovie ON Role.roleID = RolePlayedInMovie.roleID 
